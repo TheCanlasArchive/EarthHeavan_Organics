@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+      <!-- optional logo image -->
+      <img src="/assets/logo.png" class="logo me-2" alt="Logo" width="70" height="70" style="border-radius: 50px;"/> 
+      <span class="brand-text">EarthHaven Organics</span>
+    </a>
+
+    <!-- Mobile toggler (Bootstrap handles this) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <div class="navbar-nav ms-auto">
+        <a
+          class="nav-link"
+          routerLink="/home"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+
+        <a class="nav-link" routerLink="/products" routerLinkActive="active"
+          >Products</a
+        >
+
+        <a class="nav-link" routerLink="/employees" routerLinkActive="active"
+          >Employees</a
+        >
+
+        <a class="nav-link" routerLink="/about" routerLinkActive="active"
+          >About</a
+        >
+      </div>
+
+      <!-- Call-to-action button -->
+      <a
+        class="btn btn-main ms-lg-3 mt-3 mt-lg-0"
+        routerLink="/products"  routerLinkActive="active"
+      >
+        Shop Now
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Your pages will load here -->
+<router-outlet></router-outlet>
+
+<footer class="footer">
+
+  <!-- Top Section -->
+  <div class="footer-custom-bg py-4 py-md-5 border-top border-light-subtle">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Logo + Description -->
+        <div class="col-12 col-md-4 col-xl-3 text-center text-md-start">
+          <a href="#">
+            <img src="/assets/logo.png"
+                 alt="EarthHaven Logo"
+                 width="100" height="100" style="border-radius: 50px;">
+          </a>
+          <p class="mt-3 small footer-desc">
+            Fresh, sustainable, and organic products grown with care for a healthier planet.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-4 col-xl-3">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="list-unstyled footer-list">
+            <li><a href="/home" class="footer-link">Home</a></li>
+            <li><a href="/about" class="footer-link">About Us</a></li>
+            <li><a href="/products" class="footer-link">Products</a></li>
+            <li><a href="/employees" class="footer-link">Employee Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- Info Links -->
+        <div class="col-6 col-md-4 col-xl-3">
+          <h6 class="footer-title">Information</h6>
+          <ul class="list-unstyled footer-list">
+            <li><a href="#" class="footer-link">FAQs</a></li>
+            <li><a href="#" class="footer-link">Shipping & Returns</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Sustainability</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact + Socials -->
+        <div class="col-12 col-md-12 col-xl-3 text-center text-xl-start">
+          <h6 class="footer-title">Get in Touch</h6>
+          <p class="small mb-1">Email: support@earthhaven.com</p>
+          <p class="small mb-3">Phone: +1 (555) 123-4567</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="footer-custom-bg py-3 border-top border-light-subtle">
+    <div class="container text-center">
+      <div class="footer-link small mb-1">© 2025 EarthHaven Organics. All Rights Reserved.</div>
+      <div class="built-by mt-1 fs-8">
+        Built with <span class="text-lime">♥</span> by EarthHaven Organics
+      </div>
+    </div>
+  </div>
+
+</footer>
+

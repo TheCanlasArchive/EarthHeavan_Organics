@@ -1,0 +1,28 @@
+.timeline-vine {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-vine::before {
+    content: '';
+    position: absolute;
+    left: 89px; 
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-green);
+    opacity: 0.3;
+}
+
+.rotate-n2 { transform: rotate(-3deg); }
+.rotate-2 { transform: rotate(3deg); }
+
+.letter-spacing-1 {
+    letter-spacing: 1.5px;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(25, 135, 84, 0.15) !important;
+}
+

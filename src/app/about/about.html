@@ -1,0 +1,238 @@
+<div class="bg-cream leaf-pattern py-5 border-bottom">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="d-inline-block border border-success text-success px-3 py-1 rounded-pill small fw-bold mb-3 text-uppercase">
+                    Est. 2020 &bull; Philippines
+                </div>
+                <h1 class="display-3 fw-bold text-dark mb-4">Rooted in <span class="text-success">Goodness.</span></h1>
+                <p class="lead text-muted mb-4">
+                    EarthHaven began with a simple question: "Why is it so hard to find vegetables that actually taste like vegetables?"
+                </p>
+                <p class="text-dark">
+                    We started as a small cooperative of three families. Today, we define the standard for clean, ethical, and delicious produce.
+                </p>
+            </div>
+            <div class="col-lg-6 text-center position-relative">
+                <div class="image-stack position-relative mx-auto" style="width: 350px; height: 300px;">
+                    <div class="bg-white p-2 shadow rounded-3 rotate-n2 position-absolute top-0 start-0 w-100 h-100" style="z-index: 1;">
+                         <div class="bg-success bg-opacity-10 w-100 h-100 rounded-3 d-flex align-items-center justify-content-center overflow-hidden">
+                            </div>
+                    </div>
+                    <div class="bg-white p-2 shadow-lg rounded-3 rotate-2 position-relative" style="z-index: 2; transform: translateY(20px) translateX(-20px);">
+                        <div class="bg-secondary bg-opacity-25 rounded-3 d-flex align-items-center justify-content-center overflow-hidden" style="height: 300px;">
+                             <img src="assets/images/hero.png" alt="Our Farm Hero" class="w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white py-5">
+    <div class="container py-4">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="bg-cream p-5 rounded-3 h-100 border-start border-4 border-success">
+                    <h3 class="fw-bold text-dark mb-3">Our Mission</h3>
+                    <p class="text-muted mb-0">To democratize access to organic food by building a direct supply chain that empowers local farmers and nourishes urban families.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bg-cream p-5 rounded-3 h-100 border-start border-4 border-dark">
+                    <h3 class="fw-bold text-dark mb-3">Our Vision</h3>
+                    <p class="text-muted mb-0">A future where clean, chemical-free food is the standard, not the luxury, for every Filipino household.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5 mb-5">
+    <div class="text-center mb-5">
+        <h6 class="text-success fw-bold text-uppercase">Who We Are</h6>
+        <h2 class="display-6 fw-bold">Meet the Founders</h2>
+        <div class="section-divider mx-auto bg-success" style="height: 4px; width: 60px; margin: 20px auto;"></div>
+    </div>
+    
+    <div class="row g-4 justify-content-center">
+        @for (person of founders; track person.name) {
+            <div class="col-md-4">
+                <div class="card h-100 border-0 text-center">
+                    <div class="card-body">
+                        <div class="mx-auto mb-3 p-1 border border-2 border-success rounded-circle" style="width: 130px; height: 130px;">
+                            <img [src]="person.image" alt="{{ person.name }}" class="rounded-circle w-100 h-100" style="object-fit: cover; background-color: #f9f7f2;">
+                        </div>
+                        <h5 class="fw-bold mb-1">{{ person.name }}</h5>
+                        <p class="text-success small fw-bold text-uppercase mb-3">{{ person.role }}</p>
+                        <p class="text-muted small">{{ person.bio }}</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="bg-dark py-5">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <div class="bg-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="assets/images/farm.png" alt="Farm View" class="rounded-2 w-100" style="height: 250px; object-fit: cover;">
+                    <p class="text-center text-muted small mt-2 mb-0 fw-bold">Our Fields</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="assets/images/harvest.png" alt="Harvest Time" class="rounded-2 w-100" style="height: 250px; object-fit: cover;">
+                    <p class="text-center text-muted small mt-2 mb-0 fw-bold">Daily Harvest</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-white p-2 rounded-3 shadow-sm h-100">
+                    <img src="assets/images/packing.png" alt="Packing" class="rounded-2 w-100" style="height: 250px; object-fit: cover;">
+                    <p class="text-center text-muted small mt-2 mb-0 fw-bold">Eco Packing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-cream py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h6 class="text-success fw-bold text-uppercase">The Journey</h6>
+            <h2 class="display-6 fw-bold">Soil to Soul</h2>
+            <div class="section-divider mx-auto bg-success" style="height: 4px; width: 60px; margin: 20px auto;"></div>
+        </div>
+
+        <div class="row g-4 position-relative">
+            <div class="d-none d-lg-block position-absolute top-50 start-0 w-100 border-top border-success border-2" style="z-index: 0; opacity: 0.2;"></div>
+
+            @for (step of processSteps; track step.step) {
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 bg-transparent text-center position-relative" style="z-index: 1;">
+                        <div class="mx-auto bg-white border border-4 border-white shadow-sm rounded-circle d-flex align-items-center justify-content-center mb-3" 
+                             style="width: 100px; height: 100px; overflow: hidden;">
+                            <img [src]="step.icon" alt="Step {{ step.step }}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="card-body p-0">
+                            <span class="badge bg-success mb-2">Step {{ step.step }}</span>
+                            <h5 class="fw-bold">{{ step.title }}</h5>
+                            <p class="small text-muted">{{ step.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="bg-white py-5">
+    <div class="container py-4">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold text-uppercase text-dark">GET THAT CLEAN EATING FEELING</h2>
+                <p class="text-muted lead">We’re on a mission to make clean eating taste delicious.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 text-center card-hover bg-success text-white">
+                    <div class="card-body">
+                        <div class="mb-4"><img src="assets/images/icon1.png" style="width: 80px; height: 80px; object-fit: contain;"></div>
+                        <h4 class="fw-bold text-white">Paleo & Keto-Certified</h4>
+                        <p class="text-white-50 small">We love certifications. We’ve got some others too, like Certified Gluten-Free.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 text-center card-hover bg-success text-white">
+                    <div class="card-body">
+                        <div class="mb-4"><img src="assets/images/icon2.png" style="width: 80px; height: 80px; object-fit: contain;"></div>
+                        <h4 class="fw-bold text-white">No Refined Sugar. Ever.</h4>
+                        <p class="text-white-50 small">The basis of every healthy eating plan is to reduce sugar intake.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 text-center card-hover bg-success text-white">
+                    <div class="card-body">
+                        <div class="mb-4"><img src="assets/images/icon3.png" style="width: 80px; height: 80px; object-fit: contain;"></div>
+                        <h4 class="fw-bold text-white">Gluten & Soy Free</h4>
+                        <p class="text-white-50 small">We work in that creamy goodness using coconut milk and coconut aminos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-success py-5 position-relative overflow-hidden">
+    <div class="leaf-pattern position-absolute w-100 h-100 top-0 start-0" style="opacity: 0.05;"></div>
+    <div class="container py-5 text-center position-relative" style="z-index: 2;">
+        <p class="display-6 fw-bold text-white fst-italic mb-4">"We don't inherit the earth from our ancestors, we borrow it from our children."</p>
+        <div class="d-inline-flex align-items-center bg-white rounded-pill pe-4 ps-1 py-1">
+            <div class="rounded-circle bg-cream border border-2 border-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; overflow: hidden;">
+                <img src="assets/images/jose.png" alt="Mang Jose" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="text-start lh-1">
+                <div class="fw-bold text-dark small">Mang Jose</div>
+                <div class="text-muted" style="font-size: 0.7rem;">Head Farmer, Benguet</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-cream py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h3 class="fw-bold">Our Roots</h3>
+                </div>
+                
+                <div class="timeline-vine">
+                    @for (item of timeline; track item.year) {
+                        <div class="d-flex mb-5 position-relative">
+                            <div class="flex-shrink-0 me-4 text-end" style="width: 60px;">
+                                <span class="badge bg-success rounded-pill">{{ item.year }}</span>
+                            </div>
+                            <div class="flex-grow-1 bg-white p-4 rounded-3 shadow-sm border-start border-4 border-success">
+                                <h5 class="fw-bold mb-1">{{ item.title }}</h5>
+                                <p class="text-muted small mb-0">{{ item.desc }}</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white pt-5 pb-5">
+    <div class="container border-top pt-5">
+        <div class="row g-4 justify-content-center text-center mb-5">
+            @for (stat of stats; track stat.label) {
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-success mb-0">{{ stat.value }}</h2>
+                    <p class="small text-uppercase fw-bold text-muted letter-spacing-1">{{ stat.label }}</p>
+                </div>
+            }
+        </div>
+
+        <div class="bg-success rounded-3 p-5 text-center text-white position-relative overflow-hidden">
+            <div class="leaf-pattern position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.1;"></div>
+            <div class="position-relative" style="z-index: 2;">
+                <h2 class="fw-bold mb-3">Ready to taste the difference?</h2>
+                <p class="mb-4 opacity-75">Meet the team behind your food or start your order today.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a routerLink="/employees" class="btn btn-light rounded-pill px-4 text-success fw-bold">View Employees</a>
+                    <a routerLink="/products" class="btn btn-outline-light rounded-pill px-4 fw-bold">Shop Produce</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

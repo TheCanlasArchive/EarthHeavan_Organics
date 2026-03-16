@@ -1,0 +1,240 @@
+<!--==Search-banner=========================-->
+<section id="search-banner">
+  <div class="search-banner-card">
+    <div class="search-banner-text">
+      <h1>Order Your Daily Groceries</h1>
+      <strong>#Free Delivery</strong>
+
+      <!-- search box -->
+      <form action="" class="search-box">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search your daily groceries"
+          name="search"
+          required
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORY STRIP (tabs) ===== -->
+<section id="category" class="container py-5 products-category">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Category</h2>
+    <span class="text-muted fw-semibold">All</span>
+  </div>
+
+  <!-- Category cards -->
+  <ul class="nav category-tabs">
+    <li class="nav-item">
+      <a
+        class="category-tab active"
+        data-bs-toggle="tab"
+        href="#prod-fruits"
+      >
+        <div class="icon-circle">
+          <img src="/assets/fruits/apple.png" alt="Fruits" />
+        </div>
+        <span>Fruits</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="category-tab"
+        data-bs-toggle="tab"
+        href="#prod-vegetables"
+      >
+        <div class="icon-circle">
+          <img src="/assets/vegetables/tomato.png" alt="Vegetables" />
+        </div>
+        <span>Vegetables</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="category-tab"
+        data-bs-toggle="tab"
+        href="#prod-grains"
+      >
+        <div class="icon-circle">
+          <img src="/assets/grains&nuts/almonds.png" alt="Grains & Nuts" />
+        </div>
+        <span>Grains & Nuts</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- ===== PRODUCT CARDS ===== -->
+<section id="popular-product" class="container pb-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">Popular Product</h3>
+    <span class="text-muted fw-semibold">All</span>
+  </div>
+
+  <div class="tab-content">
+
+    <!-- FRUITS TAB -->
+    <div id="prod-fruits" class="tab-pane fade show active">
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let item of fruitItems">
+          <div class="product-image-wrap">
+            <img [src]="item.img" [alt]="item.name" />
+          </div>
+          <div class="product-body">
+            <h5 class="product-title">{{ item.name }}</h5>
+            <span class="product-qty">1 kg</span>
+            <p class="product-desc">
+              {{ item.desc }}
+            </p>
+          </div>
+          <div class="price-strip">
+            ₱{{ item.price }}/kg
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VEGETABLES TAB -->
+    <div id="prod-vegetables" class="tab-pane fade">
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let item of vegetableItems">
+          <div class="product-image-wrap">
+            <img [src]="item.img" [alt]="item.name" />
+          </div>
+          <div class="product-body">
+            <h5 class="product-title">{{ item.name }}</h5>
+            <span class="product-qty">1 kg</span>
+            <p class="product-desc">
+              {{ item.desc }}
+            </p>
+          </div>
+          <div class="price-strip">
+            ₱{{ item.price }}/kg
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAINS & NUTS TAB -->
+    <div id="prod-grains" class="tab-pane fade">
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let item of grainItems">
+          <div class="product-image-wrap">
+            <img [src]="item.img" [alt]="item.name" />
+          </div>
+          <div class="product-body">
+            <h5 class="product-title">{{ item.name }}</h5>
+            <span class="product-qty">1 kg</span>
+            <p class="product-desc">
+              {{ item.desc }}
+            </p>
+          </div>
+          <div class="price-strip">
+            ₱{{ item.price }}/kg
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ===== BUNDLE SECTION ===== -->
+<section class="bundle-section py-5">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+      <div>
+        <h3 class="section-subtitle mb-1">Popular Bundle Pack</h3>
+        <h2 class="fw-bold mb-0">Curated Farm-Fresh Bundles</h2>
+      </div>
+      <p class="text-muted small mt-2 mt-md-0">
+        Save more when you buy our pre-packed baskets of seasonal produce.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let pack of bundlePacks">
+        <div class="bundle-card h-100">
+
+          <div class="bundle-img-wrapper">
+            <img [src]="pack.img"
+                 class="img-fluid bundle-img"
+                 [alt]="pack.name">
+          </div>
+
+          <div class="p-3">
+            <h5 class="fw-bold mb-1">{{ pack.name }}</h5>
+            <p class="text-muted small mb-2">{{ pack.items }}</p>
+          </div>
+
+          <!-- bottom bar: PRICE (replaces Add to Cart) -->
+          <div class="bundle-price-bar d-flex align-items-center justify-content-between px-3 py-2">
+            <span class="small text-white-50">Bundle Price</span>
+            <span class="fw-bold fs-5 text-white">₱{{ pack.price }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- == OUR SERVICES SECTION =================== -->
+<section class="services-section py-5">
+  <div class="text-center mb-4">
+    <h2 class="services-title">Our Organic Services</h2>
+    <p class="services-subtitle">
+      Get healthier and happier with our farm-fresh delivery and customer-first services.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <!-- Card 1 -->
+    <div class="service-card">
+      <img src="assets/icons/farm-fresh.png" alt="Farm fresh" class="service-icon">
+      <h5>Farm-Fresh Sourcing</h5>
+      <p>All fruits, vegetables, grains, and nuts come directly from trusted local farms.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="service-card">
+      <img src="assets/icons/fast-delivery.png" alt="Fast delivery" class="service-icon">
+      <h5>Same-Day Delivery</h5>
+      <p>Order in the morning and receive your organic groceries by the end of the day.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="service-card">
+      <img src="assets/icons/packages.png" alt="Custom boxes" class="service-icon">
+      <h5>Custom Produce Boxes</h5>
+      <p>Create your own fruit, veggie, or grains box based on your weekly needs.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="service-card">
+      <img src="assets/icons/eco-friendly.png" alt="Eco packaging" class="service-icon">
+      <h5>Eco-Friendly Packaging</h5>
+      <p>We use paper bags and reusable boxes to reduce plastic waste.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="service-card">
+      <img src="assets/icons/customer support.png" alt="Support" class="service-icon">
+      <h5>Customer Support</h5>
+      <p>Need help with an order? Our team is available every day to assist you.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="service-card">
+      <img src="assets/icons/quality.png" alt="Quality check" class="service-icon">
+      <h5>Quality Checked</h5>
+      <p>Each item is inspected for freshness and quality before it reaches your home.</p>
+    </div>
+  </div>
+</section>

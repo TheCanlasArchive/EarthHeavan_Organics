@@ -1,0 +1,58 @@
+<div class="container-fluid bg-cream leaf-pattern d-flex align-items-center justify-content-center" style="min-height: 90vh;">
+  <div class="text-center p-5">
+
+    <div class="floating-icon mb-4">
+      <div class="bg-white border border-4 border-success rounded-circle d-flex align-items-center justify-content-center mx-auto shadow-lg" 
+           style="width: 150px; height: 150px;">
+        <span class="display-1 fw-bold text-success">?</span>
+      </div>
+    </div>
+
+    <h1 class="display-4 fw-bold text-dark">Oops!</h1>
+    <h2 class="h4 text-muted mb-4">Looks like this page got eaten by the vegetables!</h2>
+
+    <!-- SEARCH BAR -->
+    <form class="bg-white p-2 rounded-pill shadow-sm border mx-auto mb-4 d-flex align-items-center"
+          style="max-width: 400px;"
+          (ngSubmit)="onSearch()">
+      <input type="text"
+             class="form-control border-0 shadow-none"
+             placeholder="Search for fresh produce..."
+             [(ngModel)]="searchTerm"
+             name="searchTerm">
+      <button class="btn btn-success rounded-pill px-4" type="submit">Search</button>
+    </form>
+
+    <!-- QUICK LINKS -->
+    <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+      <a routerLink="/home" class="btn btn-success rounded-pill px-4">Home</a>
+      <a routerLink="/products" class="btn btn-outline-success rounded-pill px-4">Products</a>
+      <a routerLink="/about" class="btn btn-outline-dark rounded-pill px-4">About</a>
+      <a routerLink="/employees" class="btn btn-outline-dark rounded-pill px-4">Employees</a>
+    </div>
+
+    <!-- SEARCH RESULTS -->
+    <div *ngIf="searchPerformed">
+      <h5 class="mb-3">Search results for "<span class="text-success">{{ searchTerm }}</span>":</h5>
+
+      <div *ngIf="filteredItems.length > 0; else noResults" class="row g-3 justify-content-center">
+        <div class="col-md-4" *ngFor="let item of filteredItems">
+          <div class="card h-100 border-0 shadow-sm">
+            <img [src]="item.img" class="card-img-top" [alt]="item.name" style="height: 180px; object-fit: cover;">
+            <div class="card-body">
+              <h6 class="fw-bold mb-1">{{ item.name }}</h6>
+              <p class="small text-muted mb-2">{{ item.desc }}</p>
+              <div class="fw-bold text-success">₱{{ item.price }}/kg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noResults>
+        <p class="text-muted small">No matching produce found. Try another keyword like <strong>apple</strong>, <strong>carrot</strong>, or <strong>orange</strong>.</p>
+      </ng-template>
+    </div>
+
+    <p class="small text-muted mt-5">Error Code: 404 - Harvest Not Found</p>
+  </div>
+</div>

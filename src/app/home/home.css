@@ -1,0 +1,241 @@
+/* Background Image */
+.hero-wrapper {
+  background-image: url('/assets/home3-bg.png');
+  background-size: cover;
+  background-position: center;   
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  filter: brightness(1.18);     
+}
+
+/* Dark transparent overlay */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.58);  
+  height: 100%;
+  width: 100%;
+  padding: 3rem 2rem;
+}
+
+/* Button styling */
+.btn-main {
+  background-color: #5D9424;
+  color: #FFFDF9;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-main:hover {
+  background-color: #d89b1c;
+  transform: scale(1.05);
+}
+
+/* Basket */
+.hero-basket {
+  width: 30rem;
+  max-width: 100%;
+  filter: brightness(0.9);
+}
+
+
+/*===== SERVICE SECTION =====*/ 
+.section-subtitle {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.service-item {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  transition: 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background-color: #dfed7f;
+}
+
+/* Icons */
+.service-icon {
+  font-size: 3rem;
+  color: #4CAF50 !important; 
+}
+
+
+/*===== PATTERN SECTION (ABOUT & RECIPE SECTION =====*/ 
+
+.about-section,
+.recipes-section {
+  position: relative;
+  background-color: #f9f7f2; 
+  overflow: hidden;
+}
+
+.about-section::before,
+.recipes-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: #f9f7f2;
+  background-image:
+    radial-gradient(#198754 0.6px, transparent 0.6px),
+    radial-gradient(#198754 0.6px, transparent 0.6px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  z-index: 0;
+}
+
+.about-section > .container,
+.about-section > .container-xxl,
+.recipes-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/*===== ABOUT SECTION =====*/ 
+
+.text-about {
+  color: #d98a00;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.text-brand {
+  color: #4a9b3e;
+}
+
+.about-img {
+  object-fit: cover;
+  height: 100%;
+  min-height: 160px;
+  border-radius: 12px;
+}
+
+.about-stat h1 {
+  color: #d98a00;
+}
+
+.about-stat h6 {
+  font-weight: 700;
+}
+
+
+/*===== MENU SECTION =====*/ 
+.organic-tabs .nav-link {
+  font-weight: 600;
+  color: #555;
+}
+
+.organic-tabs .nav-link.active {
+  color: #d98a00;
+  border-color: #d98a00 !important;
+}
+
+.menu-item {
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.menu-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.menu-item .text-primary {
+  color: #5D9424 !important;
+}
+
+
+/*===== TESTIMONIAL SECTION =====*/ 
+.testimonial-box {
+  background: #f8fff5;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 100%;       
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #4a9b3e; 
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  color: #4a9b3e;
+  margin-bottom: 2px;
+}
+
+.testimonial-role {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #4a9b3e;
+}
+
+.carousel-indicators .active {
+  background-color: #d98a00; 
+}
+
+
+/*===== RECIPE SECTION =====*/ 
+
+.recipes-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.recipe-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.09);
+}
+
+.recipe-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.recipe-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: #eaf6e8;
+  color: #4a9b3e;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.recipe-text {
+  font-size: 0.95rem;
+  color: #555;
+}

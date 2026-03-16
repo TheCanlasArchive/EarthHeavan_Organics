@@ -1,0 +1,85 @@
+/* Whole navbar background */
+.main-navbar {
+  background-color: #4A2A18; 
+}
+
+/* Brand text */
+.main-navbar .brand-text {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #5D9424; 
+}
+
+/* Brand hover */
+.main-navbar .navbar-brand:hover .brand-text {
+  color: #BBC863; 
+}
+
+/* Nav links */
+.main-navbar .nav-link {
+  color: #FFFDF9;
+  font-weight: 500;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Active + hover states */
+.main-navbar .nav-link.active,
+.main-navbar .nav-link:hover {
+  color: #BBC863;
+}
+
+/* CTA button */
+.btn-main {
+  background-color: #5D9424;
+  border: none;
+  color: #FFFDF9;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.4rem 1.5rem;
+}
+
+.btn-main:hover {
+  background-color: #BBC863;
+  color: #4A2A18;
+}
+
+/* Footer background */
+.footer-custom-bg {
+  background-color: #5a3e2b; 
+  color: #f3e9d7;            
+}
+
+/* Footer titles */
+.footer-title {
+  font-weight: 600;
+  color: #ffe9c4;          
+  margin-bottom: 0.75rem;
+}
+
+/* Footer link styles */
+.footer-link {
+  color: #f3e9d7;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #ffd9a0; 
+}
+
+.social-icon:hover {
+  color: #ffd9a0;
+}
+
+/* Footer small text */
+.footer-desc {
+  color: #f3e9d7;
+  opacity: 0.9;
+}
+
+/* Bottom bar text */
+.built-by,
+.footer-link.small {
+  color: #f3e9d7;
+}

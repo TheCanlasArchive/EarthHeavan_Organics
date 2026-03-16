@@ -1,0 +1,112 @@
+<div class="bg-cream py-5 mb-5 border-bottom leaf-pattern">
+    <div class="container text-center">
+        <h6 class="text-success text-uppercase fw-bold mb-2">The Growers & Movers</h6>
+        <h1 class="display-5 fw-bold text-dark">Our Team</h1>
+        
+        <div class="mt-4 d-flex justify-content-center gap-2 flex-wrap">
+            <button class="btn btn-sm rounded-pill px-3" 
+                [class.btn-success]="selectedDepartment === 'All'" 
+                [class.btn-outline-dark]="selectedDepartment !== 'All'"
+                (click)="setFilter('All')">All</button>
+            <button class="btn btn-sm rounded-pill px-3" 
+                [class.btn-success]="selectedDepartment === 'Operations'" 
+                [class.btn-outline-dark]="selectedDepartment !== 'Operations'"
+                (click)="setFilter('Operations')">Operations</button>
+            <button class="btn btn-sm rounded-pill px-3" 
+                [class.btn-success]="selectedDepartment === 'Logistics'" 
+                [class.btn-outline-dark]="selectedDepartment !== 'Logistics'"
+                (click)="setFilter('Logistics')">Logistics</button>
+            <button class="btn btn-sm rounded-pill px-3" 
+                [class.btn-success]="selectedDepartment === 'Corporate'" 
+                [class.btn-outline-dark]="selectedDepartment !== 'Corporate'"
+                (click)="setFilter('Corporate')">Corporate</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row g-4">
+        @for (emp of filteredEmployees; track emp.empNum) {
+            <div class="col-md-6 col-lg-4">
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        
+                        <div class="flip-card-front shadow-sm">
+                            @if (emp.featured) {
+                                <div class="ribbon"><span>Featured</span></div>
+                            }
+                            
+                            <img [src]="emp.image" 
+                                 alt="{{ emp.name }}" 
+                                 class="rounded-circle border border-2 border-success mb-3" 
+                                 style="width: 100px; height: 100px; object-fit: cover; background-color: #f9f7f2;">
+                            
+                            <h5 class="fw-bold mb-0">{{ emp.name }}</h5>
+                            <p class="text-muted small mb-3">{{ emp.role }}</p>
+                            <span class="badge bg-light text-dark border mb-3">{{ emp.department }}</span>
+
+                            <div class="w-100 px-3 mt-2">
+                                <div class="d-flex justify-content-between small text-muted mb-1">
+                                    <span>Tenure</span>
+                                    <span>{{ emp.tenure }} Years</span>
+                                </div>
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar bg-success" role="progressbar" [style.width.%]="emp.tenure * 10"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <small class="text-success fw-bold">Hover for details &rarr;</small>
+                            </div>
+                        </div>
+
+                        <div class="flip-card-back shadow-sm text-start">
+                            <h6 class="fw-bold text-success text-uppercase mb-3 w-100 text-center">Profile Details</h6>
+                            
+                            <div class="row w-100 g-2 mb-3">
+                                <div class="col-6">
+                                    <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.65rem;">ID Number</small>
+                                    <span class="fw-bold small">#{{ emp.empNum }}</span>
+                                </div>
+                                <div class="col-6">
+                                    <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Status</small>
+                                    @if (emp.status === 'Active') {
+                                        <span class="badge bg-success" style="font-size: 0.7rem;">Active</span>
+                                    } @else if (emp.status === 'On Leave') {
+                                        <span class="badge bg-warning text-dark" style="font-size: 0.7rem;">On Leave</span>
+                                    } @else {
+                                        <span class="badge bg-secondary" style="font-size: 0.7rem;">Resigned</span>
+                                    }
+                                </div>
+                                <div class="col-6">
+                                    <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Gender</small>
+                                    <span class="small">{{ emp.gender }}</span>
+                                </div>
+                                <div class="col-6">
+                                    <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Salary</small>
+                                    <span class="fw-bold text-success small">₱{{ emp.salary }}</span>
+                                </div>
+                                <div class="col-12 border-top pt-2 mt-1">
+                                    <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Email Address</small>
+                                    <span class="small text-break fw-semibold" style="font-size: 0.8rem;">{{ emp.email }}</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-3 rounded mb-3 w-100 text-center border position-relative flex-grow-1 d-flex align-items-center justify-content-center">
+                                <div>
+                                    <small class="text-success d-block text-uppercase fw-bold mb-1" style="font-size: 0.6rem; letter-spacing: 1px;">Fun Fact</small>
+                                    <p class="mb-0 small fst-italic text-dark" style="font-size: 0.8rem; line-height: 1.4;">"{{ emp.funFact }}"</p>
+                                </div>
+                            </div>
+
+                            <a href="mailto:{{ emp.email }}" class="btn btn-success btn-sm rounded-pill w-100 mt-auto">Contact {{ emp.name.split(' ')[0] }}</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
